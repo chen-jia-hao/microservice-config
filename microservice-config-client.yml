@@ -1,0 +1,21 @@
+spring:
+  profiles: dev
+  application:
+    name: microservice-config-client
+server:
+  port: 8201
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: http://localhost:${server.port}/eureka
+---
+spring:
+  profiles: test
+  application:
+    name: microservice-config-client
+server:
+  port: 8202
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: http://localhost:${server.port}/eureka
